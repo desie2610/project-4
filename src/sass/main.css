@@ -45,4 +45,19 @@ body {
   .container {
     width: 1200px;
   }
+}
+
+.footer {
+  background-color: #000000;
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+.footer__text {
+  color: #939393;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }/*# sourceMappingURL=main.css.map */
