@@ -1,14 +1,26 @@
 <header class="header">
   <div class="container">
-    <div class="header__logo__bg">
-      <svg class="header__logo">
-        <use class="header__use"></use>
+    <div class="header__logo">
+      <svg class="header__logo__svg">
+        <use href="../img/symbol-defs.svg#logo"></use>
       </svg>
     </div>
     <h1 class="header__title">FIND BEST EVENTS AROUND THE WORLD</h1>
     <form class="header__form">
-      <input type="text" class="header__search" name="search" id="search" placeholder="Start searching">
-      <input type="text" class="header__country" name="country" id="country" placeholder="Choose country">
+      <div class="header__field">
+        <input type="text" class="header__search" name="search" id="search" placeholder="Start searching">
+        <svg class="header__search__icon">
+          <use href="../img/symbol-defs.svg#search"></use>
+        </svg>
+      </div>
+      
+      
+      <div class="header__field">
+        <input type="text" class="header__country" name="country" id="country" placeholder="Choose country">
+        <svg class="header__arrow__icon">
+          <use href="../img/symbol-defs.svg#arrow-down"></use>
+        </svg>
+      </div>
     </form>
   </div>
 </header>
