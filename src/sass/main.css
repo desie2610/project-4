@@ -46,6 +46,7 @@ body {
     width: 1200px;
   }
 }
+
 .header {
   background-color: rgba(11, 11, 11, 0.5);
   background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)), linear-gradient(180deg, rgba(0, 0, 0, 0) 77.08%, rgba(13, 13, 13, 0.19) 77.31%, rgba(14, 14, 14, 0.8) 100%), url(../img/hero-bcg-mobile.webp);
@@ -401,7 +402,6 @@ body {
   .event-empty-text {
     font-size: 45px;
   }
-   line-height: normal;
 }
 .footer {
   background-color: #000000;
@@ -418,6 +418,8 @@ body {
   .footer__text {
     font-size: 16px;
   }
+}
+
 .modal {
   transform: translate(-50%, -50%) scale(1);
   transition: 250ms;
