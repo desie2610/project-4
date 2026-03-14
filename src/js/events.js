@@ -5,14 +5,14 @@ const paginationContainer = document.getElementById("pagination");
 
 let currentPage = 0;
 
-async function loadEvents(page = 0) {
+export async function loadEvents(page = 0, searchKeyword = "", countryCode = "US") {
 
   eventsContainer.innerHTML = "Завантаження...";
   currentPage = page;
 
   try {
 
-    const url =  `https://app.ticketmaster.com/discovery/v2/events.json?size=12&page=${page}&countryCode=US&apikey=${API_KEY}`
+    const url =  `https://app.ticketmaster.com/discovery/v2/events.json?size=12&page=${page}&countryCode=${countryCode}&keyword=${searchKeyword}&apikey=${API_KEY}`
 
     const response = await fetch(url);
     const data = await response.json();
@@ -73,7 +73,7 @@ async function loadEvents(page = 0) {
 
     }
 
-    renderPagination(data.page.totalPages);
+    renderPagination(data.page.totalPages, searchKeyword, countryCode);
 
   } catch (error) {
 
@@ -87,7 +87,7 @@ async function loadEvents(page = 0) {
 
 }
 
-function renderPagination(totalPages) {
+function renderPagination(totalPages, searchKeyword, countryCode) {
 
   paginationContainer.innerHTML = "";
 
@@ -105,7 +105,7 @@ function renderPagination(totalPages) {
     }
 
     btn.onclick = function () {
-      loadEvents(i);
+      loadEvents(i, searchKeyword, countryCode);
     };
 
     paginationContainer.appendChild(btn);
