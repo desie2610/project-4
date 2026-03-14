@@ -9,14 +9,14 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-   backdrop-filter: blur(4px);
-   animation: fadeIn 250ms ease forwards;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 250ms ease forwards;
 }
 
 
-// .backdrop.is-hidden {
-//   display: none;
-// }
+.backdrop.is-hidden {
+  display: none;
+}
 
 
 .modal {
@@ -35,7 +35,7 @@
   padding: 24px 24px 52px;
   box-sizing: border-box;
   position: relative;
-   animation: modalIn 300ms ease forwards;
+  animation: modalIn 300ms ease forwards;
 
 
   @media screen and (max-width: 768px) {
@@ -200,6 +200,9 @@
 
 
   &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
     background: #4c00fe;
     width: 130px;
@@ -263,8 +266,3 @@
     }
   }
 }
- 
-
-
-
-
