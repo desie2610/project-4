@@ -4,13 +4,13 @@ const paginationContainer = document.getElementById("pagination");
 
 let currentPage = 0;
 
-async function loadEvents(page = 0) {
+async function loadEvents(page = 0, eventKeyword, codeOfCountry) {
   eventsContainer.innerHTML = "Завантаження...";
   currentPage = page;
 
   try {
     const response = await fetch(
-      `https://app.ticketmaster.com/discovery/v2/events.json?size=12&page=${page}&countryCode=US&apikey=${API_KEY}`
+      `https://app.ticketmaster.com/discovery/v2/events.json?size=12&page=${page}&countryCode=${codeOfCountry}&keyword=${eventKeyword}&apikey=${API_KEY}`
     );
 
     const data = await response.json();

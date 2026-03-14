@@ -1,20 +1,35 @@
 .header {
   background-color: rgba(11, 11, 11, 0.5);
-  background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 77.08%, rgba(13, 13, 13, 0.19) 77.31%, rgba(14, 14, 14, 0.80) 100%), url(../img/hero-bcg-mobile.webp);
+  background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 77.08%, rgba(13, 13, 13, 0.19) 77.31%, rgba(14, 14, 14, 0.80) 100%), url(../img/hero-bcg-mobile@1x.webp);
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 77.08%, rgba(13, 13, 13, 0.19) 77.31%, rgba(14, 14, 14, 0.80) 100%), url(../img/hero-bcg-mobile@2x.webp);
+  }
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   padding-top: 78px;
   padding-bottom: 112px;
 
-  @media screen and (min-width: 624px) {
-    background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 77.08%, rgba(13, 13, 13, 0.19) 77.31%, rgba(14, 14, 14, 0.80) 100%), url(../img/hero-bcg-tablet.webp);
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 77.08%, rgba(13, 13, 13, 0.19) 77.31%, rgba(14, 14, 14, 0.80) 100%), url(../img/hero-bcg-tablet@1x.webp);
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 77.08%, rgba(13, 13, 13, 0.19) 77.31%, rgba(14, 14, 14, 0.80) 100%), url(../img/hero-bcg-tablet@2x.webp);
+    }    
+
     padding-top: 40px;
     padding-bottom: 183px;     
   }
 
-  @media screen and (min-width: 1080px) {
-    background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 77.08%, rgba(13, 13, 13, 0.19) 77.31%, rgba(14, 14, 14, 0.80) 100%), url(../img/hero-bcg-desktop.webp);
+  @media screen and (min-width: 1200px) {
+    background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 77.08%, rgba(13, 13, 13, 0.19) 77.31%, rgba(14, 14, 14, 0.80) 100%), url(../img/hero-bcg-desktop@1x.webp);
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 77.08%, rgba(13, 13, 13, 0.19) 77.31%, rgba(14, 14, 14, 0.80) 100%), url(../img/hero-bcg-desktop@2x.webp);
+    }
+
     padding-bottom: 192px;    
   }  
 
@@ -28,7 +43,7 @@
     top: -90px;
     left: -107px;
 
-    @media screen and (min-width: 624px) {
+    @media screen and (min-width: 768px) {
       width: 359px;
       height: 302px;
       border-radius: 359px; 
@@ -36,7 +51,7 @@
       left: -179.5px;
     }
 
-    @media screen and (min-width: 1080px) {
+    @media screen and (min-width: 1200px) {
       width: 477px;
       height: 402px;
       border-radius: 425px;
@@ -46,21 +61,20 @@
 
     &__svg {
       fill: #FFFFFF;
-
       position: absolute;
       width: 59.6px;
       height: 29.67px;
       bottom: 36.49px;
       right: 24.35px;      
 
-      @media screen and (min-width: 624px) {
+      @media screen and (min-width: 768px) {
         width: 100px;
         height: 49.78px;
         bottom: 61.22px;
         right: 40px;      
       }  
 
-      @media screen and (min-width: 1080px) {
+      @media screen and (min-width: 1200px) {
         width: 136.28px;
         height: 67.85px;
         bottom: 93.15px;
@@ -79,13 +93,13 @@
     font-size: 18px;
     font-weight: 900;
 
-    @media screen and (min-width: 624px) {
+    @media screen and (min-width: 768px) {
       width: 353px;
       margin-bottom: 27px;
       font-size: 30px;
     }  
 
-    @media screen and (min-width: 1080px) {
+    @media screen and (min-width: 1200px) {
       width: 589px;
       margin-bottom: 52px;
       font-size: 50px;
@@ -98,7 +112,7 @@
     gap: 25px;
     align-items: center;
 
-    @media screen and (min-width: 624px) {
+    @media screen and (min-width: 768px) {
       flex-direction: row;
       gap: 30px;
       justify-content: center;
