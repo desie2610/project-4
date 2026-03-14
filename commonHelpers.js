@@ -1,26 +1,26 @@
-(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const a of t.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&s(a)}).observe(document,{childList:!0,subtree:!0});function c(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(e){if(e.ep)return;e.ep=!0;const t=c(e);fetch(e.href,t)}})();const h=document.querySelector(".header__form"),L=document.querySelector("#search"),M=document.querySelector("#country");let r="all",i="US";loadEvents(0,r,i);h.addEventListener("submit",async n=>{n.preventDefault(),r=L.value.trim()||"all",i=M.value.trim().toUpperCase()||"US",await loadEvents(0,r,i)});const b="tkmMLNmH6ORb9UhzGdYC2YZyBTGuvM6L",d=document.getElementById("events"),p=document.getElementById("pagination");let f=0;async function y(n=0){d.innerHTML="Завантаження...",f=n;try{const o=`https://app.ticketmaster.com/discovery/v2/events.json?size=12&page=${n}&countryCode=US&apikey=${b}`,s=await(await fetch(o)).json();if(d.innerHTML="",!s._embedded){d.innerHTML=`
+(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const r of t.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&a(r)}).observe(document,{childList:!0,subtree:!0});function s(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function a(e){if(e.ep)return;e.ep=!0;const t=s(e);fetch(e.href,t)}})();const L="tkmMLNmH6ORb9UhzGdYC2YZyBTGuvM6L",d=document.getElementById("events"),f=document.getElementById("pagination");let y=0;async function l(o=0,n="",s="US"){d.innerHTML="Завантаження...",y=o;try{const a=`https://app.ticketmaster.com/discovery/v2/events.json?size=12&page=${o}&countryCode=${s}&keyword=${n}&apikey=${L}`,t=await(await fetch(a)).json();if(d.innerHTML="",!t._embedded){d.innerHTML=`
         <div class="event-empty">
           <p class="event-empty-text">Подій не знайдено</p>
         </div>
-      `;return}const e=s._embedded.events;for(let t=0;t<e.length;t++){const a=e[t],l=document.createElement("div");let m="";a.images&&a.images.length>0&&(m=a.images[0].url);let u="Не знайдено місце проведення";a._embedded&&a._embedded.venues&&(u=a._embedded.venues[0].name);const v=a.name,g=a.dates.start.localDate;l.innerHTML=`
+      `;return}const r=t._embedded.events;for(let i=0;i<r.length;i++){const c=r[i],m=document.createElement("div");let u="";c.images&&c.images.length>0&&(u=c.images[0].url);let v="Не знайдено місце проведення";c._embedded&&c._embedded.venues&&(v=c._embedded.venues[0].name);const p=c.name,g=c.dates.start.localDate;m.innerHTML=`
         <div class="event-item" data-modal-events-open>
           <div class="event-img-decorate">
             <div class="event-img-box">
-              <img class="event-img" src="${m}" alt="${v}">
+              <img class="event-img" src="${u}" alt="${p}">
             </div>
           </div>
 
-          <div class="event-name">${v}</div>
+          <div class="event-name">${p}</div>
           <div class="event-date">${g}</div>
 
           <div class="event-place-box">
             <div class="vector-place"></div>
-            <div class="event-place">${u}</div>
+            <div class="event-place">${v}</div>
           </div>
         </div>
-      `,d.appendChild(l)}E(s.page.totalPages)}catch{d.innerHTML=`
+      `,d.appendChild(m)}h(t.page.totalPages,n,s)}catch{d.innerHTML=`
       <div class="event-empty">
         <p class="event-empty-text">Помилка завантаження</p>
       </div>
-    `}}function E(n){p.innerHTML="";const o=5;for(let c=0;c<n&&c<o;c++){const s=document.createElement("button");s.className="page-btn",s.textContent=c+1,c===f&&s.classList.add("active"),s.onclick=function(){y(c)},p.appendChild(s)}}y();(()=>{const n={openModalBtn:document.querySelector("[data-modal-events-open]"),closeModalBtn:document.querySelector("[data-modal-events-close]"),modal:document.querySelector("[data-modal-events]")};n.openModalBtn.addEventListener("click",openModal),n.closeModalBtn.addEventListener("click",closeModal),n.modal.addEventListener("click",o=>{o.target===n.modal&&closeModal()}),document.addEventListener("keydown",o=>{o.key==="Escape"&&closeModal()})})();
+    `}}function h(o,n,s){f.innerHTML="";const a=5;for(let e=0;e<o&&e<a;e++){const t=document.createElement("button");t.className="page-btn",t.textContent=e+1,e===y&&t.classList.add("active"),t.onclick=function(){l(e,n,s)},f.appendChild(t)}}l();const M=document.querySelector(".header__form"),b=document.querySelector("#search"),E=document.querySelector("#country");M.addEventListener("submit",async o=>{o.preventDefault();let n=b.value.trim()||"",s=E.value.trim().toUpperCase()||"US";await l(0,n,s)});(()=>{const o={openModalBtn:document.querySelector("[data-modal-events-open]"),closeModalBtn:document.querySelector("[data-modal-events-close]"),modal:document.querySelector("[data-modal-events]")};o.openModalBtn.addEventListener("click",openModal),o.closeModalBtn.addEventListener("click",closeModal),o.modal.addEventListener("click",n=>{n.target===o.modal&&closeModal()}),document.addEventListener("keydown",n=>{n.key==="Escape"&&closeModal()})})();
 //# sourceMappingURL=commonHelpers.js.map
