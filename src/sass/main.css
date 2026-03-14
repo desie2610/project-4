@@ -561,6 +561,10 @@ main {
   animation: fadeIn 250ms ease forwards;
 }
 
+.backdrop.is-hidden {
+  display: none;
+}
+
 .modal {
   transform: none;
   transition: 250ms;
@@ -718,6 +722,9 @@ main {
   margin-bottom: 6px;
 }
 .modal__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   background: #4c00fe;
   width: 130px;

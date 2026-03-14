@@ -1,3 +1,5 @@
+import { fillModal } from "./modal.js";
+
 const API_KEY = "tkmMLNmH6ORb9UhzGdYC2YZyBTGuvM6L";
 
 const eventsContainer = document.getElementById("events");
@@ -12,7 +14,7 @@ export async function loadEvents(page = 0, searchKeyword = "", countryCode = "US
 
   try {
 
-    const url =  `https://app.ticketmaster.com/discovery/v2/events.json?size=12&page=${page}&countryCode=${countryCode}&keyword=${searchKeyword}&apikey=${API_KEY}`
+    const url = `https://app.ticketmaster.com/discovery/v2/events.json?size=12&page=${page}&countryCode=${countryCode}&keyword=${searchKeyword}&apikey=${API_KEY}`
 
     const response = await fetch(url);
     const data = await response.json();
@@ -70,6 +72,11 @@ export async function loadEvents(page = 0, searchKeyword = "", countryCode = "US
       `;
 
       eventsContainer.appendChild(card);
+
+      card.addEventListener("click", () => {
+        fillModal(event);
+      });
+
 
     }
 
