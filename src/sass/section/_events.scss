@@ -214,12 +214,12 @@ main {
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд */
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
-    gap: 20px 30px; /* вертикальный и горизонтальный отступ */
+    gap: 20px 30px;
     justify-content: center;
-    max-height: calc((250px + 20px) * 5); /* высота 5 рядов */
-    overflow: hidden; /* скрываем лишние карточки */
+    max-height: calc((250px + 20px) * 5);
+    overflow: hidden;
     margin-top: 20px;
 }
 
